@@ -5,6 +5,7 @@ import Register from "./pages/register/register";
 import SignIn from "./pages/signin/signin";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import ResetPassword from "./pages/forgetpassword/resetpassword";
 
 class App extends Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class App extends Component {
         <div className='App'>
           <Route exact path='/' component={SignIn} />
           <Route path='/register' component={Register} />
+          <Route path='/resetpassword' component={ResetPassword} />
         </div>
       </Router>
     );

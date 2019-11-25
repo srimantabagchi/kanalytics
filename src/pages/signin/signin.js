@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import "./signin.css";
 import Register from "../register/register";
-// import Register from './../register/register'
+import ResetPassword from "../forgetpassword/resetpassword";
 
 class SignIn extends Component {
   constructor(props) {
@@ -75,15 +75,19 @@ class SignIn extends Component {
                     >
                       Register
                     </Link>
-                    <a class='d-block text-center mt-2 small' href='#'>
+                    <Link
+                      class='d-block text-center mt-2 small'
+                      to={`/resetpassword`}
+                    >
                       Forgot Password?
-                    </a>
+                    </Link>
                   </form>
                 </div>
               </div>
             </div>
           </div>
           <Route path='/register' component={Register} />
+          <Route path='/resetpassword' component={ResetPassword} />
         </div>
       </React.Fragment>
     );
