@@ -1,5 +1,15 @@
 import React, { Component } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams
+} from "react-router-dom";
 import "./signin.css";
+import Register from "../register/register";
+// import Register from './../register/register'
 
 class SignIn extends Component {
   constructor(props) {
@@ -59,9 +69,12 @@ class SignIn extends Component {
                       Sign in
                     </button>
                     <hr class='my-4'></hr>
-                    <a class='d-block text-center mt-2 small' href='#'>
+                    <Link
+                      class='d-block text-center mt-2 small'
+                      to={`/register`}
+                    >
                       Register
-                    </a>
+                    </Link>
                     <a class='d-block text-center mt-2 small' href='#'>
                       Forgot Password?
                     </a>
@@ -70,6 +83,7 @@ class SignIn extends Component {
               </div>
             </div>
           </div>
+          <Route path='/register' component={Register} />
         </div>
       </React.Fragment>
     );

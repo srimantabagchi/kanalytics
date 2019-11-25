@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 //import SignInForm from "./components/signinform";
 import Register from "./pages/register/register";
 import SignIn from "./pages/signin/signin";
@@ -16,9 +17,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className='App'>
-        <SignIn />
-      </div>
+      <Router>
+        <div className='App'>
+          <Route exact path='/' component={SignIn} />
+          <Route path='/register' component={Register} />
+        </div>
+      </Router>
     );
   }
 }

@@ -1,5 +1,14 @@
 import React, { Component } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams
+} from "react-router-dom";
 import "./register.css";
+import SignIn from "../signin/signin";
 
 class Register extends Component {
   constructor(props) {
@@ -72,14 +81,15 @@ class Register extends Component {
                     >
                       Register
                     </button>
-                    <a class='d-block text-center mt-2 small' href='#'>
+                    <Link class='d-block text-center mt-2 small' to={`/`}>
                       Sign In
-                    </a>
+                    </Link>
                   </form>
                 </div>
               </div>
             </div>
           </div>
+          <Route exact path='/' component={SignIn} />
         </div>
       </React.Fragment>
     );
